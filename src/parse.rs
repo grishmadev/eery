@@ -1,43 +1,26 @@
 use std::{collections::HashMap, error::Error, process::Command};
 
-use crate::{FunctionCall, NeedleData};
+use crate::{NeedleData, config::Config};
 
-pub fn parse_command(cmd: &str) -> Result<NeedleData, Box<dyn Error>> {
-    let out = Command::new("engine/linux-x86_64/needle")
+/// converts speech to tool calls
+pub fn parse_speech(config: &Config, cmd: &str) -> Result<NeedleData, Box<dyn Error>> {
+    let out = Command::new("needle-engine")
         .args([
             "--model",
-            "engine/linux-x86_64/needle3.cact",
+            &config.parse_model_path,
             "--prompt",
             cmd,
             "--tools",
-            "./tools.engine.json",
+            "/tmp/tools.engine.json",
         ])
         .output()?;
     let output = String::from_utf8_lossy(&out.stdout).to_lowercase();
-    println!("parsed: {output}");
-    Ok(serde_json::from_str(&output)?)
+    println!("parsed speech: {output}");
+    let data = serde_json::from_str(&output)?;
+    Ok(data)
 }
 
-pub fn parse_tools(calls: Vec<FunctionCall>) -> Result<(), Box<dyn Error>> {
-    for call in calls {
-        let name = call.name.as_str();
-        match name {
-            "play_music" => {
-                Command::new("limusic-app").output()?;
-            }
-            "set_volume" => {
-                let volume = call.arguments.get("level").unwrap().as_u64().unwrap();
-                let output = Command::new("amixer")
-                    .args(["-q", "sset", "Master", &format!("{}%", volume)])
-                    .output()?;
-                println!("volume: {}", String::from_utf8_lossy(&output.stdout));
-            }
-            _ => {}
-        }
-    }
-    Ok(())
-}
-
+// NOTE: still in dev so ignore this
 pub fn parse_tools_manual(output: String) -> Result<(), Box<dyn Error>> {
     let negation = ["never", "don't", "do not", "not", "no"];
     let mut tool_names: HashMap<String, Vec<String>> = HashMap::new();
@@ -83,9 +66,5 @@ pub fn parse_tools_manual(output: String) -> Result<(), Box<dyn Error>> {
     }
     println!("best match: {}", best_match.0);
 
-    let call = FunctionCall {
-        name: best_match.0.clone(),
-        arguments: serde_json::Map::new(),
-    };
     Ok(())
 }
