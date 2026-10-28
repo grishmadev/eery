@@ -1,0 +1,58 @@
+<mxfile host="Electron">
+  <diagram name="Page-1" id="NBp3Jl3kxvA6_Qz8BbMO">
+    <mxGraphModel dx="1414" dy="1312" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="xyh2oCqzCGR4bu4Xqi38-4" edge="1" parent="1" source="xyh2oCqzCGR4bu4Xqi38-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="xyh2oCqzCGR4bu4Xqi38-3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xyh2oCqzCGR4bu4Xqi38-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Wakeword heard&lt;div&gt;(Trigger)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="100" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="xyh2oCqzCGR4bu4Xqi38-6" edge="1" parent="1" source="xyh2oCqzCGR4bu4Xqi38-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="xyh2oCqzCGR4bu4Xqi38-5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xyh2oCqzCGR4bu4Xqi38-3" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="Listen untill Silence" vertex="1">
+          <mxGeometry height="60" width="120" x="260" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="xyh2oCqzCGR4bu4Xqi38-8" edge="1" parent="1" source="xyh2oCqzCGR4bu4Xqi38-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;sketch=1;curveFitting=1;jiggle=2;shadow=0;followTerminals=0;strokeColor=default;curved=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="xyh2oCqzCGR4bu4Xqi38-7" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xyh2oCqzCGR4bu4Xqi38-11" edge="1" parent="1" source="xyh2oCqzCGR4bu4Xqi38-5" style="edgeStyle=orthogonalEdgeStyle;shape=connector;curved=1;rounded=0;sketch=1;jiggle=2;curveFitting=1;orthogonalLoop=1;jettySize=auto;html=1;shadow=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;followTerminals=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="xyh2oCqzCGR4bu4Xqi38-10" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xyh2oCqzCGR4bu4Xqi38-5" parent="1" style="whiteSpace=wrap;html=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;glass=0;" value="Parse Voice using Recognition model" vertex="1">
+          <mxGeometry height="60" width="120" x="420" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="xyh2oCqzCGR4bu4Xqi38-13" edge="1" parent="1" source="xyh2oCqzCGR4bu4Xqi38-7" style="edgeStyle=orthogonalEdgeStyle;shape=connector;curved=1;rounded=0;sketch=1;jiggle=2;curveFitting=1;orthogonalLoop=1;jettySize=auto;html=1;shadow=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;followTerminals=0;" target="xyh2oCqzCGR4bu4Xqi38-12" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xyh2oCqzCGR4bu4Xqi38-7" parent="1" style="whiteSpace=wrap;html=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;glass=0;" value="Recognise&lt;div&gt;Command using model&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="590" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="xyh2oCqzCGR4bu4Xqi38-14" edge="1" parent="1" source="xyh2oCqzCGR4bu4Xqi38-10" style="edgeStyle=orthogonalEdgeStyle;shape=connector;curved=1;rounded=0;sketch=1;jiggle=2;curveFitting=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;shadow=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;followTerminals=0;" target="xyh2oCqzCGR4bu4Xqi38-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xyh2oCqzCGR4bu4Xqi38-10" parent="1" style="whiteSpace=wrap;html=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;glass=0;" value="Recognise Command using Pattern matching" vertex="1">
+          <mxGeometry height="60" width="120" x="590" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="xyh2oCqzCGR4bu4Xqi38-12" parent="1" style="whiteSpace=wrap;html=1;rounded=1;sketch=1;curveFitting=1;jiggle=2;glass=0;" value="Execute using shell" vertex="1">
+          <mxGeometry height="60" width="120" x="760" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="xyh2oCqzCGR4bu4Xqi38-17" edge="1" parent="1" source="xyh2oCqzCGR4bu4Xqi38-16" style="edgeStyle=orthogonalEdgeStyle;shape=connector;curved=1;rounded=0;sketch=1;jiggle=2;curveFitting=1;orthogonalLoop=1;jettySize=auto;html=1;shadow=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;followTerminals=0;dashed=1;" target="xyh2oCqzCGR4bu4Xqi38-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xyh2oCqzCGR4bu4Xqi38-16" parent="1" style="whiteSpace=wrap;html=1;rounded=1;glass=0;sketch=1;jiggle=2;curveFitting=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=default;" value="Extract tools and command from config" vertex="1">
+          <mxGeometry height="70" width="140" x="750" y="-10" as="geometry" />
+        </mxCell>
+        <mxCell id="xyh2oCqzCGR4bu4Xqi38-19" edge="1" parent="1" source="xyh2oCqzCGR4bu4Xqi38-18" style="edgeStyle=orthogonalEdgeStyle;shape=connector;curved=1;rounded=0;sketch=1;jiggle=2;curveFitting=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;shadow=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;followTerminals=0;dashed=1;" target="xyh2oCqzCGR4bu4Xqi38-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xyh2oCqzCGR4bu4Xqi38-18" parent="1" style="whiteSpace=wrap;html=1;rounded=1;glass=0;sketch=1;jiggle=2;curveFitting=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=default;" value="Extract keywords" vertex="1">
+          <mxGeometry height="70" width="140" x="750" y="210" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
