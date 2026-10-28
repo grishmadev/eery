@@ -1,0 +1,5 @@
+limusic
+vlc
+mpv
+librewolf
+thunderbird

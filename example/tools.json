@@ -1,0 +1,39 @@
+[
+  {
+    "name": "play_music",
+    "description": "start playing music from the local library.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "run": "vlc ~/Music"
+  },
+  {
+    "name": "set_volume",
+    "description": "set the computer's volume to a percentage, e.g. 'set volume to 40'.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "level": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "volume percent, a number said in the request"
+        }
+      },
+      "required": [
+        "level"
+      ]
+    },
+    "run": "amixer -q sset Master {level}%"
+  },
+  {
+    "name": "last_session",
+    "description": "open most recent project",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    },
+    "run": "notify-send 'Open'"
+  }
+]
