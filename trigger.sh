@@ -7,7 +7,7 @@ if [ -f "$PID_FILE" ]; then
   rm -f "$PID_FILE"
   echo "Recording stopped. Processing command..."
   notify-send "Recorded. Parsing."
-  eery --parse-audio /tmp/eery.wav
+  eery --audio /tmp/eery.wav
 else
   rm -f "$PID_FILE" "$WAV_PATH"
 
