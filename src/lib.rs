@@ -58,3 +58,9 @@ pub fn setup() -> Result<(), Box<dyn Error>> {
     }
     Ok(())
 }
+
+#[derive(Debug)]
+pub struct ParseResult {
+    pub confidence: f32,
+    pub calls: Vec<FunctionCall>,
+}
