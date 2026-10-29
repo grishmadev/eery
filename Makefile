@@ -1,3 +1,4 @@
+
 install:
 	chmod +x ./install.sh
 	chmod +x ./trigger.sh
@@ -5,3 +6,5 @@ install:
 	cargo build -r
 	mv ./target/release/eery ~/.local/bin/eery
 	echo "All Set."
+
+default: install
