@@ -6,7 +6,8 @@
       "type": "object",
       "properties": {}
     },
-    "run": "vlc ~/Music"
+    "run": "vlc ~/Music",
+    "keywords": ["music","song", "songs", "tune", "play"]
   },
   {
     "name": "set_volume",
@@ -25,7 +26,8 @@
         "level"
       ]
     },
-    "run": "amixer -q sset Master {level}%"
+    "run": "amixer -q sset Master {level}%",
+    "keywords": ["volume", "sound", "set", "audio"]
   },
   {
     "name": "last_session",
@@ -34,6 +36,7 @@
       "type": "object",
       "properties": {}
     },
-    "run": "notify-send 'Open'"
+    "run": "$HOME/.config/eery/last_project.sh; notify-send 'Opened Last Project'",
+    "keywords": ["project", "session", "last", "work", "open"]
   }
 ]

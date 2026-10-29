@@ -7,12 +7,18 @@ use std::{
 
 #[derive(Debug)]
 pub struct Config {
+    /// set keywords path
     pub keywords_path: String,
+    /// set tools path
     pub tools_path: String,
+    /// set voice model path
     pub voice_model_path: String,
+    /// set parse model path
     pub parse_model_path: String,
     /// Audio file path
     pub audio: String,
+    /// Parse via model or manually
+    pub manual: bool,
 }
 
 #[derive(Debug, Clone, PartialEq)]
@@ -34,12 +40,14 @@ impl Config {
         let voice_model_path = config_path.join("whistle.cact").into_string().unwrap();
         let parse_model_path = config_path.join("needle3.cact").into_string().unwrap();
         let audio = "/tmp/eery.wav".into();
+        let manual = false;
         Self {
             keywords_path,
             tools_path,
             voice_model_path,
             parse_model_path,
             audio,
+            manual,
         }
     }
 
@@ -67,6 +75,8 @@ impl Config {
                 config.parse_model_path = extract(args.next(), arg)?;
             } else if arg == "--audio" {
                 config.audio = extract(args.next(), arg)?;
+            } else if arg == "--manual" {
+                config.manual = true;
             } else {
                 return Err(ConfigError::InvalidCommand(arg));
             }
@@ -76,5 +86,7 @@ impl Config {
 }
 
 pub fn show_help() {
-    println!("This is Help!");
+    println!(
+        "You can look into src/config/mod.rs for a glance on usage.\n\rIt's fairly simple for even a non-rust background."
+    );
 }

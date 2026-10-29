@@ -3,11 +3,13 @@ use eery::{
         Config,
         tools::{parse_tools, run_tools},
     },
-    parse::parse_speech,
+    parse::{parse_speech, parse_speech_manual},
     setup,
     voice::transcribe_audio,
 };
 use std::error::Error;
+
+const MINIMUM_CONFIDENCE: f32 = 0.2;
 
 fn main() -> Result<(), Box<dyn Error>> {
     setup()?;
@@ -28,14 +30,18 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     let output = transcribe_audio(&config)?;
     let output = output.text;
-    let data = parse_speech(&config, &output)?;
-    if data.confidence <= 0.3 {
+    let data = if config.manual {
+        parse_speech_manual(&tools, &output)?
+    } else {
+        parse_speech(&config, &output)?
+    };
+    if data.confidence <= MINIMUM_CONFIDENCE {
         eprintln!("Confidence too low. Aborting.");
         return Ok(());
     }
     println!("data: {:#?}", data);
 
-    run_tools(&tools, &data.function_calls)?;
+    run_tools(&tools, &data.calls)?;
 
     Ok(())
 }

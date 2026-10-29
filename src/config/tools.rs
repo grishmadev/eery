@@ -26,11 +26,11 @@ pub fn parse_tools(path: Option<String>) -> Result<HashMap<String, ToolDef>, Box
     for t in &mut raw {
         if let Some(o) = t.as_object_mut() {
             o.remove("run");
+            o.remove("keywords");
         }
     }
     let content = serde_json::to_string(&raw)?;
     std::fs::write("/tmp/tools.engine.json", content)?;
-
     Ok(tools)
 }
 
@@ -64,11 +64,11 @@ pub fn run_tools(
     Ok(())
 }
 
-#[derive(Deserialize)]
+#[derive(Deserialize, Debug)]
 pub struct ToolDef {
     pub name: String,
     #[serde(default)]
     pub run: Option<String>,
     #[serde(default)]
-    pub confirm: bool,
+    pub keywords: Vec<String>,
 }
