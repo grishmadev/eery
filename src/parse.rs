@@ -113,7 +113,7 @@ pub fn parse_speech_manual(
     // };
 
     Ok(ParseResult {
-        confidence: (score as f32 / 2.0).min(1.0),
+        confidence: 1.0,
         calls: vec![FunctionCall {
             name: name.clone(),
             arguments: Map::new(),
