@@ -1,6 +1,8 @@
 # Eery
 
-Wassup! This is a new project I thought of tonight.
+Wassup! Eery is a (kindof) voice assistant that listens on trigger, and executes a certain task(s) from scripts that **you** assign.
+
+Also this is a new project I thought of tonight.
 
 There are 2 tiny ahh models working one after another.
 
@@ -24,6 +26,7 @@ Follow the format in [example](/example) to edit you configs.
 
 
 - `tools.json` for declaring tools for the model
+  - Theres also `keywords` field in tools which is used to match the voice with intention. So, more matching words from `keywords` means higher score (only in manual mode).
 - `keywords.txt` for the model to bias it's words on.
 
 Else remaining are scripts that you can use in your window manager to create a shortcut using the [trigger](/trigger.sh)
