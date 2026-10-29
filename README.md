@@ -1,5 +1,11 @@
 # Eery
 
+
+
+[demo_video](https://github.com/user-attachments/assets/63557c0d-8e9d-4ba8-9a97-bb755f404482)
+
+
+
 Wassup! Eery is a (kindof) voice assistant that listens on trigger, and executes a certain task(s) from scripts that **you** assign.
 
 Also this is a new project I thought of tonight.
